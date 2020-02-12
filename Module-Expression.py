@@ -1,7 +1,7 @@
 def modExp(b, n, m):
-    binary=""
-    output=1
-    power=1
+    binary=""#the power of the number in binary 
+    output=1#initialize the output
+    power=1#Initial value of output
     while n > 0:
         binary=str(n%2)+binary
         n=int(n/2)
