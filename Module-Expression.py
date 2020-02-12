@@ -12,4 +12,4 @@ def modExp(b, n, m):
         power=(power*power)%m
         print("Power: ",power,"i: ",i,"output :",output)
     return output
-print(modExp(3,644,645))
+

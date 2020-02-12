@@ -1,5 +1,4 @@
 def gcd(a, b):
-    #FIXME: IMPLEMENT THIS METHOD
     m=0
     divisor=0
     if a<=b:
