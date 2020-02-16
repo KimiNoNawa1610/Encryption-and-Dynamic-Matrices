@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
-"""
 def binaryAdd(a, b): #This is the beginning of a Python function
     """ This is the function's docstring
     returns the sum of two binary numbers a and b

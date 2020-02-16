@@ -6,7 +6,7 @@ def modExp(b, n, m):
         binary=str(n%2)+binary
         n=int(n/2)
     power=b
-    for i in binary[::-1]:
+    for i in binary[::-1]:#iterate the binary string from right to left
         if(i=="1"):
             output=(output*power)%m
         power=(power*power)%m
