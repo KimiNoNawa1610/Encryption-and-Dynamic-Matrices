@@ -11,4 +11,4 @@ def gcd(a, b):
             divisor=i
         i=i+1
     return divisor
-print(gcd(414,662 ))
+
