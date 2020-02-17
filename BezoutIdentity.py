@@ -1,22 +1,17 @@
 def bezoutCoeffs(a, b):
-    r=a
-    r1=b
-    u=1
-    v=0
-    u1=0
-    v1=1
-    while(r1!=0):
-        q=r//r1
-        rs=r
-        us=u
-        vs=v
-        r=r1
-        u=u1
-        v=v1
-        r1=rs-q*r1
-        u1=us-q*u1
-        v1=vs-q*v1
-    return(u,v)
-       
-
-print(bezoutCoeffs(21, 13))
+    s=1
+    t=0
+    s1=0
+    t1=1
+    while(b!=0):
+        m=a//b
+        a1=a
+        a=b
+        sn=s
+        s=s1
+        tn=t
+        t=t1
+        b=a1-m*b
+        s1=sn-m*s1
+        t1=tn-m*t1
+    return(s, t)
