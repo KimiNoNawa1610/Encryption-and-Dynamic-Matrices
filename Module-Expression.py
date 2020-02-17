@@ -11,5 +11,6 @@ def modExp(b, n, m):
             output=(output*power)%m
         power=(power*power)%m
         print("Power: ",power,"i: ",i,"output :",output)
+        
     return output
 
