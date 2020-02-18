@@ -12,3 +12,7 @@ def bezoutCoeffs(a, b):
         s=sn#update the initial first bezout coefficient
         t1=t#update t1(tn-2)
         t=tn#update the initial second bezout coefficient
+        b=a1-m*b#the eulerian algorithm
+        sn=s1-m*sn#sn=sn-2-sn-1(a div b)
+        tn=t1-m*tn#tn=(tn-2)-(tn-1)(a div b)
+    return(s, t)#return the bezout coefficients
