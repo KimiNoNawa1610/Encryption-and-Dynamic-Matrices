@@ -1,14 +1,15 @@
 def modExp(b, n, m):
-    #FIXME: IMPLEMENT THIS METHOD
-    binary=""#initialize the exponent of the number in binary form
-    output=1#initialize the result
-    power=b#The original power is the number (b)
-    while(n > 0):#if n is not zero
-        binary=str(n%2)+binary#convert the exponent to binary
+    binary=""
+    output=1
+    power=1
+    while n > 0:
+        binary=str(n%2)+binary
         n=int(n/2)
-        for i in binary[::-1]:#interate through the binary exponent from right to left
-            if(i=="1"):#if binary exponent component is not zero
-                output=(output*power)%m#update the result 
-        power=(power*power)%m#double the number (b)
-    return output#return the output
-print(modExp(3,2003,99))
+    power=b
+    for i in binary[::-1]:
+        if(i=="1"):
+            output=(output*power)%m
+        power=(power*power)%m
+        print("Power: ",power,"i: ",i,"output :",output)
+    return output
+print(modExp(25,2525,77))
