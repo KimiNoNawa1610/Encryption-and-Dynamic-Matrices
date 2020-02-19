@@ -39,3 +39,5 @@ def gcd(a, b):
         a=b#update the variable being subtracted
         b=a1-m*b#the Eulerian algorithm
     return a#return the result
+
+
