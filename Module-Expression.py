@@ -1,5 +1,4 @@
 def modExp(b, n, m):
-    #FIXME: IMPLEMENT THIS METHOD
     binary=""#initialize the exponent of the number in binary form
     output=1#initialize the result
     power=b#The original power is the number (b)
