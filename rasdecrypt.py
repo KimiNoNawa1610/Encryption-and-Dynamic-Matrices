@@ -27,4 +27,6 @@ def decryptRSA(c, p, q, e):
             
     OUTPUT: The decrypted message as a string of letters
     """
+    code=c.split(" ")
+    
     pass
