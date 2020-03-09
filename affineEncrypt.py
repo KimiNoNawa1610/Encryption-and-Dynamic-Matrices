@@ -20,7 +20,6 @@ def affineEncrypt(text, a, b):
     if(a!=1):
         return "The given key is invalid. The gcd(a,26) must be 1."
     else:
-        test=text.split(",")
         output=""
         for i in text:
             p=int(letters2digits(i))
