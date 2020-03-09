@@ -18,3 +18,9 @@ def digits2letters(digits):
     
     return letters
 
+def blocksize(n):
+    """returns the size of a block in an RSA encrypted string"""
+    twofive = "25"
+    while int(twofive) < n:
+        twofive += "25"
+    return len(twofive) - 2
