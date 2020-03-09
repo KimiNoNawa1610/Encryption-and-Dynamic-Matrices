@@ -19,3 +19,12 @@ def digits2letters(digits):
     return letters
 
 
+def decryptRSA(c, p, q, e):
+    """decrypts the cipher c, which was encrypted using the key (p * q, e)
+    INPUT:  c - ciphertext as a string of digits
+            p, q - prime numbers used as part of the key n = p * q to encrypt the ciphertext
+            e - integer satisfying gcd((p-1)*(q-1), e) = 1
+            
+    OUTPUT: The decrypted message as a string of letters
+    """
+    pass
