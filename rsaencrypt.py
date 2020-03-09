@@ -36,11 +36,25 @@ def encryptRSA(m, p, q, e):
     """
     n=p*q
     size=blocksize(n)
+    print(size)
     series=""
     for i in m:
         series=series+letters2digits(i)
+    while (len(series)%size)!=0:
+        series=series+"23"
     print(series)
-    
-    
+    a=size
+    b=0
+    x=[]
+    output=""
+    for i in range(size):
+        x.append(series[b:a])
+        b=a
+        a=a+size
+    print(x)
+    for i in x:
+        if(len(i)!=0):
+            output=output+str((int(i)**e)%n)
+    print(output)
     pass
 encryptRSA("UPLOAD",53,61,17)
