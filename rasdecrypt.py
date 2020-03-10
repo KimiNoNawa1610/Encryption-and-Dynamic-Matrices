@@ -61,8 +61,26 @@ def decryptRSA(c, p, q, e):
             
     OUTPUT: The decrypted message as a string of letters
     """
+    
+    decrypted=""
+    original=""
+    result=[]
+    output=""
     code=c.split(" ")
+    c=c.replace(" ", "")
+    print(c);
     mod=abs((p-1)*(q-1))
     n=p*q
-    modinv(e,n)
+    inverse=modinv(e,mod)
+    for i in code:
+        decrypted=str((int(i)**inverse)%n)
+        if(len(decrypted)!=len(i)):
+            decrypted="0"+decrypted
+        original=original+decrypted
+    chunks = [original[i:i+2] for i in range(0, len(original), 2)]
+    for i in chunks:
+        output=output+digits2letters(i)
+    return output
     pass
+
+decryptRSA("0667 1947 0671", 43, 59, 13)
