@@ -7,6 +7,11 @@ def modExp(b, n, m):
         n=int(n/2)
     for i in binary[::-1]:#interate through the binary exponent from right to left
         if(i=="1"):#if binary exponent component is not zero
-            output=(output*power)%m#update the result 
+            print("output: ",output,"|","power: ",power)
+            output=(output*power)%m#update the result
+            print("updated output: ",output)
+            
         power=(power*power)%m#double the number (b)
+        print("power: ",power)
     return output#return the output
+print(modExp(19,13,2537))
