@@ -17,7 +17,7 @@ def affineEncrypt(text, a, b):
         d=c#update the variable being subtracted
         
         c=a1-m*c#the Eulerian algorithm
-    if(a!=1):
+    if(d!=1):
         return "The given key is invalid. The gcd(a,26) must be 1."
     else:
         output=""
