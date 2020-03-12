@@ -1,17 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # CECS 229 Coded HW #2
-# 
-# #### Due Date: Thursday 3/12 @ 11:59 PM
-# 
-# #### Submission Instructions:
-# 
-# Attach your coded solution to the programming tasks below. When you are finished...
-# 
-# 1. Rename this file so that your actual name replaces "YOUR NAME" in the current notebook name, and submit it to the dropbox by **Thursday 3/12 @ 11:59 PM**. For example, I would submit to the dropbox a file called  `CECS 229 Coded HW#2 - KATHERINE VARELA.ipynb`
-# 2. Submit your code only to CodePost as `hw2.py` by **Thursday 3/12 @ 11:59 PM**
-# 
+#Nhan Vo
 # ### Programming Tasks
 # 
 #
