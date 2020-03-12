@@ -105,7 +105,7 @@ def modinv(a,m):
         return s 
     return 0
 
-print(modinv(18,19))
+
         
     
     
@@ -282,7 +282,6 @@ def decryptRSA(c, p, q, e):
     return output
     pass
 
-print(modinv(4,12))
 
 
 
