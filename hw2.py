@@ -229,7 +229,7 @@ def encryptRSA(m, p, q, e):
             y=str((int(i)**e)%n)
             if(len(y)!=size):
                 y="0"+y
-            output=output+" "+y
+            output=output+y
     return output
     pass
     
@@ -274,7 +274,6 @@ def decryptRSA(c, p, q, e):
         output=output+digits2letters(i)
     return output
     pass
-
 
 
 
