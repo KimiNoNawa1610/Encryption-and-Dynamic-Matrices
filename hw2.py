@@ -94,8 +94,7 @@ def modinv(a,m):
         sn=s1-b*sn
         tn=t1-b*tn
     if(a!=1):
-        
-        return "The given values are not relatively prime"
+        raise ValueError("The given values are not relatively prime")
     
     else:
         
@@ -106,6 +105,10 @@ def modinv(a,m):
         return s 
     return 0
 
+print(modinv(18,19))
+        
+    
+    
 
 # #### Problem 2: 
 # Create a function `affineEncrypt(text, a,b)` that returns the cipher text encrypted using key  (`a`, `b`).  You must verify that the gcd(a, 26) = 1 before making the encryption.  If this is not the case, the function must throw an `raise` a `ValueError` exception with message `"The given key is invalid. The gcd(a,26) must be 1."`.  You can NOT use any built-in functions as part of your implementation, but you may import and use any functions you implemented for either Coded HW \#1 or Lab Assignment \#3.  You may also use the utility functions at the end of this notebook.
@@ -132,18 +135,20 @@ def affineEncrypt(text, a, b):
         d=c#update the variable being subtracted
         
         c=a1-m*c#the Eulerian algorithm
-    if(a!=1):
+        
+    if(d!=1):
         return "The given key is invalid. The gcd(a,26) must be 1."
     else:
         output=""
         for i in text:
-            p=int(letters2digits(i))
-            encrypt=(a*p+b)%26
-            digit=str(encrypt)
-            if(len(digit)<2):
-                digit="0"+digit 
-            encryption=digits2letters(digit)
-            output=output+encryption
+            if(i!=" "):
+                p=int(letters2digits(i))
+                encrypt=(a*p+b)%26
+                digit=str(encrypt)
+                if(len(digit)<2):
+                    digit="0"+digit 
+                encryption=digits2letters(digit)
+                output=output+encryption
             
         return output
     pass
@@ -180,11 +185,12 @@ def affineDecrypt(ciphertext, a, b):
     else:
         decryption=""
         for i in ciphertext:
-            compute=int(letters2digits(i))
-            decrypt= str((modinv(a,26)*(compute-b))%26)
-            if(len(decrypt)<2):
-                decrypt="0"+decrypt
-            decryption=decryption+digits2letters(str(decrypt))
+            if(i!=" "):
+                compute=int(letters2digits(i))
+                decrypt= str((modinv(a,26)*(compute-b))%26)
+                if(len(decrypt)<2):
+                    decrypt="0"+decrypt
+                decryption=decryption+digits2letters(str(decrypt))
             
         return decryption    
             
@@ -270,11 +276,13 @@ def decryptRSA(c, p, q, e):
             decrypted="0"+decrypted
         original=original+decrypted
     chunks = [original[i:i+2] for i in range(0, len(original), 2)]
+    print(chunks)
     for i in chunks:
         output=output+digits2letters(i)
     return output
     pass
 
+print(modinv(4,12))
 
 
 
