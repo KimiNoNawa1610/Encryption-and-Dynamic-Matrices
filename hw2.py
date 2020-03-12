@@ -137,7 +137,7 @@ def affineEncrypt(text, a, b):
         c=a1-m*c#the Eulerian algorithm
         
     if(d!=1):
-        return "The given key is invalid. The gcd(a,26) must be 1."
+        raise ValueError("The given key is invalid. The gcd(a,26) must be 1.") 
     else:
         output=""
         for i in text:
@@ -181,7 +181,7 @@ def affineDecrypt(ciphertext, a, b):
         
         c=a1-m*c#the Eulerian algorithm
     if(d!=1):
-        return "The given key is invalid. The gcd(a,26) must be 1."
+       raise ValueError( "The given key is invalid. The gcd(a,26) must be 1.")
     else:
         decryption=""
         for i in ciphertext:
