@@ -68,7 +68,6 @@ def decryptRSA(c, p, q, e):
     output=""
     code=c.split(" ")
     c=c.replace(" ", "")
-    print(c);
     mod=abs((p-1)*(q-1))
     n=p*q
     inverse=modinv(e,mod)
@@ -83,4 +82,4 @@ def decryptRSA(c, p, q, e):
     return output
     pass
 
-decryptRSA("0667 1947 0671", 43, 59, 13)
+print(decryptRSA("3185 2038 2460 2550", 53, 61, 17))
