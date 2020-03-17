@@ -25,7 +25,6 @@ def modinv(a,m):
         return "The given values are not relatively prime"
     
     else:
-        
         while(s<0):
             s=s+c
         while(s>c):
@@ -33,5 +32,5 @@ def modinv(a,m):
         return s 
     return 0
 
-print(modinv(18,19))
+print(modinv(17,19))
 
