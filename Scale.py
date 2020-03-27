@@ -12,7 +12,7 @@ def scale(S, k):
     #FIXME: IMPLEMENT FUNCTION
     output=set()
     if(k<=0):
-        raise ValueError
+        raise ValueError("Scaling factor must be a positive float")
     else:
         for i in S:
             n=i*k
