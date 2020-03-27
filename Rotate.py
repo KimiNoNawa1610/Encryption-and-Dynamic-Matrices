@@ -1,3 +1,5 @@
+import math
+from plotting import plot
 def rotate(S, theta):
     """
     rotates the complex numbers of set S by theta radians.  
@@ -9,17 +11,23 @@ def rotate(S, theta):
         
     """
     #FIXME: IMPLEMENT FUNCTION
-    sim=set()
+    
+    output=set()
     if(theta==0):
         return S
-    elif(theta>0):
+    else:
+        angle=complex(math.cos(theta),math.sin(theta))
         for i in S:
-            n=complex(i.replace("j",""))
-            sim.add(n)
-            
-        print(sim)
-
+            n=i*angle
+            output.add(n)
+        return output
     pass
 
+
+
 S = {2 + 2j, 3 + 2j , 1.75 + 1j, 2 + 1j, 2.25 + 1j, 2.5 + 1j, 2.75 + 1j, 3 + 1j, 3.25 + 1j}
-rotate(S, 1)
+
+print(rotate(S, 1))
+plot(S)
+plot(rotate(S,-math.pi/4))
+
