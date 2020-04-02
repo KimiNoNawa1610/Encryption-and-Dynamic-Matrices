@@ -16,10 +16,3 @@ def translate(S, z0):
     return output
     pass
 
-S = {1+2j}
-
-T = translate(S, -1+2j)
-
-print(T)
-plot(S)
-plot(T)
