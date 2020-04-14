@@ -13,7 +13,7 @@ class Vec:
         output=0
         for i in self.elements:
             output+=i**2
-        output=math.sqrt(output)
+        output=output**0.5
         return output
         pass
         
@@ -52,7 +52,7 @@ class Vec:
             #FIXME: IMPLEMENT
             output=Vec([])
             for i in self.elements:
-                output.elements.append(int(i*other))
+                output.elements.append(i*other)
             return output
             pass
             
@@ -64,7 +64,7 @@ class Vec:
         """
         output=Vec([])
         for i in self.elements:
-            output.elements.append(int(i*other))
+            output.elements.append(i*other)
         return output
         pass
     
