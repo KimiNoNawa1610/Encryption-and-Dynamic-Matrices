@@ -54,9 +54,12 @@ class Matrix:
             if(len(self.elements)!=len(other.elements[0])):
                 raise ValueError
             else:
+                i=0
                 for subother in other.elements:
-                    for subitems in subother:
-                        print(subitems)
+                    for subself in self.elements:
+                        for subselfitems in subself:
+                            print(subselfitems*subother[i])
+                    i=i+1
             
         elif type(other) == Vec:
             print("FIXME: Insert implementation for MATRIX-VECTOR multiplication")  #REPLACE
@@ -84,8 +87,6 @@ class Matrix:
         """prints the column """
         return str(self.elements)
 
-A = Matrix([[2, 0], [0, 2], [0, 0], [0, 0]])
-B = Matrix([[2, 0,0,0], [0,1, 2,0], [2,1, 0,0], [0,0, 1,0]])
-print(A+B)
-print(3.0*A)
+A = Matrix([[2,0,2],[1,0,0]])
+B = Matrix([[3,2],[1,5],[1,6]])
 print(A*B)
