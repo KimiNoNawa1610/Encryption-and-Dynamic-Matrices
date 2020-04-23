@@ -39,7 +39,6 @@ class Vec:
             
         """
         if type(other) == Vec: #define dot product
-            #FIXME: IMPLEMENT
             if len(self.elements)!=len(other.elements):
                 raise ValueError
             else:
@@ -48,8 +47,7 @@ class Vec:
                     output=output+(self.elements[i]*other.elements[i])
             return output
             pass
-        elif type(other) == float or type(other) == int: #scalar-vector multiplication
-            #FIXME: IMPLEMENT
+        elif type(other) == float or type(other) == int: 
             output=Vec([])
             for i in self.elements:
                 output.elements.append(i*other)
@@ -70,7 +68,7 @@ class Vec:
     
     def __str__(self):
         """returns string representation of this Vec object"""
-        return str(self.elements) # does NOT need further implementation
+        return str(self.elements) 
     
     def __sub__(self, other):
         outputadd= Vec([])
