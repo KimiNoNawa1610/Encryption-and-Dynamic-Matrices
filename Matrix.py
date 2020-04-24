@@ -63,7 +63,9 @@ class Matrix:
             
         elif type(other) == Vec:
             print("FIXME: Insert implementation for MATRIX-VECTOR multiplication")  #REPLACE
-            
+
+
+        
         else:
             print("ERROR: Unsupported Type.")
         return outputmul
