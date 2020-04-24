@@ -42,6 +42,7 @@ class Matrix:
         mul=[]
         if type(other) == float:
             #print("FIXME: Insert implementation of MATRIX-SCALAR multiplication")  #REPLACE
+            
             for subself in self.elements:
                 for selfitems in subself:
                     mul.append(selfitems*other)
@@ -55,11 +56,21 @@ class Matrix:
                 raise ValueError
             else:
                 i=0
-                for subother in other.elements:
-                    for subself in self.elements:
-                        for subselfitems in subself:
-                            print(subselfitems*subother[i])
-                    i=i+1
+                for subself in self.elements:
+                    for subother in other.elements:
+                        for selfelements in subself:
+                            print(selfelements*subother[i])
+                            
+                           
+                    
+                            
+                        
+                        
+                
+                                 
+              
+                
+
             
         elif type(other) == Vec:
             print("FIXME: Insert implementation for MATRIX-VECTOR multiplication")  #REPLACE
