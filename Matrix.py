@@ -1,3 +1,4 @@
+from Vector import Vec
 class Matrix:
     def __init__(self, Rowsp=[]):  #FIXME: Replace with your code
         self.Rowsp=Rowsp
@@ -71,7 +72,7 @@ class Matrix:
                 outputmul.Rowsp=mul                  
         elif type(other) == Vec:
             #print("FIXME: Insert implementation for MATRIX-VECTOR multiplication")  #REPLACE
-            if len(self.Rowsp[0])!=len(other.Rowsp):
+            if len(self.Rowsp[0])!=len(other.elements):
                 raise ValueError
             else:
                 mul=[0 for column in range(len(self.Rowsp))]
@@ -80,13 +81,13 @@ class Matrix:
                 for j in range(len(self.Rowsp)):
                     i=0
                     row=0
-                    for k in range(len(other.Rowsp)):
-                        row=row+self.Rowsp[j][i]*other.Rowsp[i]
+                    for k in range(len(other.elements)):
+                        row=row+self.Rowsp[j][i]*other.elements[i]
                         i+=1
                     mul[x]=row
                     x+=1
-                    
-                outputmul.elements=mul
+                outputmul.Rowsp.append(mul)
+                
         else:
             print("ERROR: Unsupported Type.")
         return outputmul
@@ -150,9 +151,15 @@ class Matrix:
         
     def __str__(self):
         """prints the column """
-        return "\n".join(" ".join(map(str,row))for row in self.Rowsp)
+        if len(self.Rowsp)==1:
+            return "\n".join(" ".join(str(row))for row in self.Rowsp[0])
+        else: 
+            return "\n".join(" ".join(map(str,row))for row in self.Rowsp)
     
         
-
-
+A = Matrix([[1, 2],[3, 4],[5, 6]])
+x = Vec([0, 1])  # Vec object
+b = A * x   # b is a Vec data type
+print("Vector b = A * x")
+print(b) 
 
