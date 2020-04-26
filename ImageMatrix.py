@@ -1,5 +1,5 @@
 import image
-
+from Matrix import Matrix
 def png2graymatrix(filename):
     """
     takes a png file and returns a Matrix object of the pixels 
@@ -8,9 +8,9 @@ def png2graymatrix(filename):
     """
     #FIXME: a single line of code should go here
     image_data=image.file2image(filename)
-    if image.isgray(image_data):
-        image_data = image.color2gray(filename)#FIXME: make the image grayscale
-    return image_data #FIXME
+    if not image.isgray(image_data):
+        image_data = image.color2gray(image_data)#FIXME: make the image grayscale
+    return Matrix(image_data) #FIXME
 
 
 def graymatrix2png(img_matrix, path):
@@ -22,8 +22,9 @@ def graymatrix2png(img_matrix, path):
     OUTPUT: 
         * a png file
     """
+    return image.image2file(img_matrix.Rowsp,path)
     pass
 M = png2graymatrix("img11.png")  # matrix for img11.png
 F = png2graymatrix("img02.png")  # matrix for img02.png
-print(M)
-print(F)
+C = M * 0.5 + F * 0.5
+graymatrix2png(C, "mixedfaces.png") 
