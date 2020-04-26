@@ -133,9 +133,12 @@ class Matrix:
     def getEntry(self,i,j):
         return self.Rowsp[i-1][j-1]
 
-    def get_diagonal(m, i0, j0, d):
-        return [m[(i0 + i - 1)%len(m)][(j0 + d*i - 1)%len(m[0])]
-                for i in range(len(m))]
+    def getdiag(self, k):
+        output=[]
+        for i in range(len(self.Rowsp)):
+            output.append(self.Rowsp[(i)%len(self.Rowsp)][(k+1 + i - 1)%len(self.Rowsp[0])])
+        return output
+                
     
     def getColSpace(self):
         return self.Colsp
@@ -150,7 +153,7 @@ class Matrix:
         
 
 
-A = Matrix([[2, 0], [0, 2], [0, 0], [0, 0]])
-print(A.getdiag(1,1,1))
+A =  Matrix([ [1, 2, 3, 4], [0, 1, 2, 3], [-1, 0, 1, 2], [-2, -1, 2, 3]])
+print(A.getdiag(-1))
 
 
