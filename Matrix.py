@@ -124,7 +124,7 @@ class Matrix:
              
     def setEntry(self,i,j,a):
         self.Rowsp[i-1][j-1]=a
-        self.Colsp[i-1][j-1]=a
+        self.Colsp[j-1][i-1]=a
         
     def getCol(self,j):
         return self.Colsp[j-1]
