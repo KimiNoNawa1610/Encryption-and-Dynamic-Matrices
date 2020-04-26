@@ -96,9 +96,44 @@ class Matrix:
         else:
             print("ERROR: Unsupported Type.")
         return outputmul
+
+    def setCol(self,j,u):
+        if len(u)!=len(self.elements):
+            raise ValueError("Incompatable column length")
+        else:
+            x=0
+            for i in self.elements:
+                i[j-1]=u[x]
+                x+=1
+
+    def setRow(self,i,v):
+        if len(v)!=len(self.elements[i-1]):
+            raise ValueError("Incompatable row length")
+        else:
+            self.elements[i-1]=v
+
+    def setEntry(self,i,j,a):
+        self.elements[i-1][j-1]=a
+        
+    def getCol(self, j):
+        mul=[]
+        for i in self.elements:
+            mul.append(i[j-1])
+        return mul
     
+    def getRow(self, i):
+        return self.elements[i-1]
+
+    def getEntry(self,i,j):
+        return self.elements[i-1][j-1]
+        
     def __str__(self):
         """prints the column """
         return str(self.elements)
+    
+        
 
+
+A = Matrix([[1, 2, 3], [4, 5, 6]])
+print(A.getEntry(1,1))
 
