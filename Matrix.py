@@ -2,7 +2,7 @@ class Matrix:
     def __init__(self, Rowsp=[]):  #FIXME: Replace with your code
         self.Rowsp=Rowsp
         col=[]
-        if len(self.Rowsp)==0 and len(self.Colsp)==0:
+        if len(self.Rowsp)==0:
             self.Rowsp=[]
             self.Colsp=[]
         else:
@@ -61,7 +61,7 @@ class Matrix:
         elif type(other) == Matrix:
             #print("FIXME: Insert implementation of MATRIX-MATRIX multiplication") #REPLACE
             mul=[[0 for row in range(len(other.Rowsp[0]))]for column in range(len(self.Rowsp))]  
-            if(len(self.Rowsp)!=len(other.Rowsp[0])):
+            if len(self.Rowsp[0])!=len(other.Rowsp):
                 raise ValueError
             else:
                 for i in range(len(self.Rowsp)):
@@ -153,9 +153,8 @@ class Matrix:
         return "\n".join(" ".join(map(str,row))for row in self.Rowsp)
     
         
-
 A = Matrix([[1, 2],[3, 4],[5, 6]])
 B = Matrix([[1, 2],[1, 2]])
-C = Matrix([[10, 20],[30, 40],[50, 60]])
-print(A+C)
+print(A*B)
+
 
