@@ -39,10 +39,9 @@ class Matrix:
         
     def __mul__(self, other):
         outputmul=Matrix([])
-        mul=[]
         if type(other) == float:
             #print("FIXME: Insert implementation of MATRIX-SCALAR multiplication")  #REPLACE
-            
+            mul=[]
             for subself in self.elements:
                 for selfitems in subself:
                     mul.append(selfitems*other)
@@ -52,29 +51,33 @@ class Matrix:
             
         elif type(other) == Matrix:
             #print("FIXME: Insert implementation of MATRIX-MATRIX multiplication") #REPLACE
+            mul=[[0 for row in range(len(other.elements[0]))]for column in range(len(self.elements))]  
             if(len(self.elements)!=len(other.elements[0])):
                 raise ValueError
             else:
-                i=0
-                for subself in self.elements:
-                    for subother in other.elements:
-                        for selfelements in subself:
-                            print(selfelements*subother[i])
-                            
-                           
-                    
-                            
-                        
-                        
-                
-                                 
-              
-                
-
-            
+                for i in range(len(self.elements)):
+                    for j in range(len(other.elements[0])):
+                        for k in range(len(other.elements)):
+                            mul[i][j]+=self.elements[i][k]*other.elements[k][j]
+                outputmul.elements=mul                  
         elif type(other) == Vec:
-            print("FIXME: Insert implementation for MATRIX-VECTOR multiplication")  #REPLACE
-
+            #print("FIXME: Insert implementation for MATRIX-VECTOR multiplication")  #REPLACE
+            if len(self.elements[0])!=len(other.elements):
+                raise ValueError
+            else:
+                mul=[0 for column in range(len(self.elements))]
+                i=0
+                x=0
+                for j in range(len(self.elements)):
+                    i=0
+                    row=0
+                    for k in range(len(other.elements)):
+                        row=row+self.elements[j][i]*other.elements[i]
+                        i+=1
+                    mul[x]=row
+                    x+=1
+                    
+                outputmul.elements=mul
         else:
             print("ERROR: Unsupported Type.")
         return outputmul
@@ -98,6 +101,4 @@ class Matrix:
         """prints the column """
         return str(self.elements)
 
-A = Matrix([[2,0,2],[1,0,0]])
-B = Matrix([[3,2],[1,5],[1,6]])
-print(A*B)
+
