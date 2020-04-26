@@ -116,16 +116,28 @@ class Matrix:
         self.elements[i-1][j-1]=a
         
     def getCol(self, j):
-        mul=[]
+        output=[]
         for i in self.elements:
-            mul.append(i[j-1])
-        return mul
+            output.append(i[j-1])
+        return output
     
     def getRow(self, i):
         return self.elements[i-1]
 
     def getEntry(self,i,j):
         return self.elements[i-1][j-1]
+
+    def getdiag(self, k):
+        output=[]
+        for i in range(len(self.elements)):
+            j=i+k
+            if j >len(self.elements):
+                j=0
+                output.append(self.elements[i][j])
+                j+=1
+            else:
+                output.append(self.elements[i][j])
+        return output
         
     def __str__(self):
         """prints the column """
@@ -134,6 +146,6 @@ class Matrix:
         
 
 
-A = Matrix([[1, 2, 3], [4, 5, 6]])
-print(A.getEntry(1,1))
+A = Matrix([ [1, 2, 3, 4], [0, 1, 2, 3], [-1, 0, 1, 2], [-2, -1, 2, 3]])
+print(A.getdiag(1))
 
