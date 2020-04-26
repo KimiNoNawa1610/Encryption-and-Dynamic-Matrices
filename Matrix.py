@@ -121,11 +121,10 @@ class Matrix:
             self.Rowsp[i-1]=v
             for j in range(len(self.Colsp)):
                 self.Colsp[j][i-1]=v[j]
-            
-            
-
+             
     def setEntry(self,i,j,a):
         self.Rowsp[i-1][j-1]=a
+        self.Colsp[i-1][j-1]=a
         
     def getCol(self,j):
         return self.Colsp[j-1]
