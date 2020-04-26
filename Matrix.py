@@ -1,7 +1,6 @@
 class Matrix:
     def __init__(self, Rowsp=[]):  #FIXME: Replace with your code
         self.Rowsp=Rowsp
-        self.Colsp=[]
         col=[]
         if len(self.Rowsp)==0 and len(self.Colsp)==0:
             self.Rowsp=[]
@@ -11,7 +10,7 @@ class Matrix:
                 tempcol=[]
                 for j in self.Rowsp:
                     tempcol.append(j[i])
-                col.append(tempcol[:])
+                col.append(tempcol)
             self.Colsp=col
         pass
     
@@ -112,12 +111,17 @@ class Matrix:
             raise ValueError("Incompatable column length")
         else:
             self.Colsp[j-1]=u
+            for i in range(len(self.Rowsp)):
+                self.Rowsp[i][j-1]=u[i]
 
     def setRow(self,i,v):
         if len(v)!=len(self.Rowsp[i-1]):
             raise ValueError("Incompatable row length")
         else:
             self.Rowsp[i-1]=v
+            for j in range(len(self.Colsp)):
+                self.Colsp[j][i-1]=v[j]
+            
             
 
     def setEntry(self,i,j,a):
