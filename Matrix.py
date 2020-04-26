@@ -1,4 +1,4 @@
-from Vector import Vec
+
 class Matrix:
     
     def __init__(self, Rowsp=[]):  #FIXME: Replace with your code
@@ -104,19 +104,17 @@ class Matrix:
         return outputmul
 
     def setCol(self,j,u):
-        if len(u)!=len(self.Rowsp):
+        if len(u)!=len(self.Colsp):
             raise ValueError("Incompatable column length")
         else:
-            x=0
-            for i in self.Rowsp:
-                i[j-1]=u[x]
-                x+=1
+            self.Colsp[j]=u
 
     def setRow(self,i,v):
         if len(v)!=len(self.Rowsp[i-1]):
             raise ValueError("Incompatable row length")
         else:
-            self.elements[i-1]=v
+            self.Rowsp[i-1]=v
+            
 
     def setEntry(self,i,j,a):
         self.Rowsp[i-1][j-1]=a
@@ -153,7 +151,6 @@ class Matrix:
         
 
 
-A =  Matrix([ [1, 2, 3, 4], [0, 1, 2, 3], [-1, 0, 1, 2], [-2, -1, 2, 3]])
-print(A.getdiag(-1))
+
 
 
