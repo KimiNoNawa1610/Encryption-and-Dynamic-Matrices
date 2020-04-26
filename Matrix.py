@@ -153,8 +153,6 @@ class Matrix:
         return "\n".join(" ".join(map(str,row))for row in self.Rowsp)
     
         
-A = Matrix([[1, 2],[3, 4],[5, 6]])
-B = Matrix([[1, 2],[1, 2]])
-print(A*B)
+
 
 
