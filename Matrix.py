@@ -1,4 +1,3 @@
-from Vector import Vec
 class Matrix:
     def __init__(self, Rowsp=[]):  #FIXME: Replace with your code
         self.Rowsp=Rowsp
@@ -141,7 +140,6 @@ class Matrix:
         for i in range(len(self.Rowsp)):
             output.append(self.Rowsp[(i)%len(self.Rowsp)][(k+1 + i - 1)%len(self.Rowsp[0])])
         return output
-                
     
     def getColSpace(self):
         return self.Colsp
@@ -157,9 +155,5 @@ class Matrix:
             return "\n".join(" ".join(map(str,row))for row in self.Rowsp)
     
         
-A = Matrix([[1, 2],[3, 4],[5, 6]])
-x = Vec([0, 1])  # Vec object
-b = A * x   # b is a Vec data type
-print("Vector b = A * x")
-print(b) 
+
 
