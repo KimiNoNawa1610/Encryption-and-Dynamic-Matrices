@@ -3,11 +3,13 @@ class Matrix:
     def __init__(self, Rowsp=[]):  #FIXME: Replace with your code
         self.Rowsp=Rowsp
         self.Colsp=[]
+        col=[]
         for i in range(len(self.Rowsp[0])):
             tempcol=[]
             for j in self.Rowsp:
                 tempcol.append(j[i])
-            self.Colsp.append(tempcol[:])
+            col.append(tempcol[:])
+            self.Colsp=col
         pass
     
     def __add__(self, other):
@@ -103,10 +105,10 @@ class Matrix:
         return outputmul
 
     def setCol(self,j,u):
-        if len(u)!=len(self.Colsp):
+        if len(u)!=len(self.Colsp[0]):
             raise ValueError("Incompatable column length")
         else:
-            self.Colsp[j]=u
+            self.Colsp[j-1]=u
 
     def setRow(self,i,v):
         if len(v)!=len(self.Rowsp[i-1]):
@@ -118,11 +120,8 @@ class Matrix:
     def setEntry(self,i,j,a):
         self.Rowsp[i-1][j-1]=a
         
-    def getCol(self, j):
-        output=[]
-        for i in self.Rowsp:
-            output.append(i[j-1])
-        return output
+    def getCol(self,j):
+        return self.Colsp[j-1]
     
     def getRow(self, i):
         return self.Rowsp[i-1]
@@ -149,7 +148,56 @@ class Matrix:
     
         
 
+A = Matrix([[1, 2, 3], [4, 5, 6]])
+print("Original Row Space:", A.getRowSpace())
+print("Original Column Space:", A.getColSpace())
+print("Original Matrix:")
+print(A)
+print()
 
+
+A.setRow(1, [10, 20, 30])
+print("Modification #1")
+print("Row Space after modification:", A.getRowSpace())
+print("Column Space after modification:", A.getColSpace())
+print("Modified Matrix:")
+print(A)
+print()
+
+A.setCol(2, [20, 50])
+print("Modification #2")
+print("Row Space after modification:", A.getRowSpace())
+print("Column Space after modification:", A.getColSpace())
+print("Modified Matrix:")
+print(A)
+print()
+
+A.setRow(2, [40, 50, 6])
+print("Modification #3")
+print("Row Space after modification:", A.getRowSpace())
+print("Column Space after modification:", A.getColSpace())
+print("Modified Matrix:")
+print(A)
+print()
+
+A.setEntry(2,3, 60)
+print("Modification #4")
+print("Row Space after modification:", A.getRowSpace())
+print("Column Space after modification:", A.getColSpace())
+print("Modified Matrix:")
+print(A)
+print()
+
+
+print("The 2nd row is:", A.getRow(2))
+print("The 3rd column is:", A.getCol(3))
+print()
+
+
+print("Modification #5")
+A.setRow(2, [40, 50])
+A.setCol(2, [30, 4, 1])
+print(A)
 
 
 
