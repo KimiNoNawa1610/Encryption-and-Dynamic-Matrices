@@ -24,7 +24,4 @@ def graymatrix2png(img_matrix, path):
     """
     return image.image2file(img_matrix.Rowsp,path)
     pass
-M = png2graymatrix("img11.png")  # matrix for img11.png
-F = png2graymatrix("img02.png")  # matrix for img02.png
-C = M * 0.5 + F * 0.5
-graymatrix2png(C, "mixedfaces.png") 
+
