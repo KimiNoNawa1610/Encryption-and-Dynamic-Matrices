@@ -21,9 +21,7 @@ def modinv(a,m):
         sn=s1-b*sn
         tn=t1-b*tn
     if(a!=1):
-        
         return "The given values are not relatively prime"
-    
     else:
         while(s<0):
             s=s+c
