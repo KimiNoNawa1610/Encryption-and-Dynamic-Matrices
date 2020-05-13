@@ -32,5 +32,5 @@ def modinv(a,m):
         return s 
     return 0
 
-print(modinv(17,19))
+
 
