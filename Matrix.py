@@ -161,8 +161,12 @@ class Matrix:
 
     def getdiag(self, k):
         output=[]
-        for i in range(len(self.Rowsp)):
-            output.append(self.Rowsp[(i)%len(self.Rowsp)][(k+1 + i - 1)%len(self.Rowsp[0])])
+        if k>=0:
+            for i in range(len(self.Rowsp)-abs(k)):
+                output.append(self.Rowsp[(i)%len(self.Rowsp)][(k+1 + i - 1)%len(self.Rowsp[0])])
+        else:
+            for i in range(abs(k),len(self.Rowsp)):
+                output.append(self.Rowsp[(i)%len(self.Rowsp)][(k+1 + i - 1)%len(self.Rowsp[0])])
         return output
                 
     
