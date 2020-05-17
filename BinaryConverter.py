@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
 def binaryAdd(a, b): #This is the beginning of a Python function
+    
     """ This is the function's docstring
     returns the sum of two binary numbers a and b
     INPUT: a,b - string representation of the binary numbers
