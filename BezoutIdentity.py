@@ -1,4 +1,5 @@
 def bezoutCoeffs(a, b):
+    
     #FIXME: IMPLEMENT THIS METHOD.
     
     s=1#initialize the first case of the first bezout coefficient
