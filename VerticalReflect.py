@@ -9,6 +9,7 @@ def reflectH(S, k):
         
     """
     output=set()
+    
     for i in S:
         distance=abs(i.imag-k)
         if i.imag>k:
